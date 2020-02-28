@@ -47,11 +47,18 @@ class LinkedList:
     # basically switching the direction of the pointers so we essentially change the tail 
     # to the head and vice versa
     # set the starting point
+    current = self.head
     # create a prev_node that points to none
+    prev_node = None
     # while there is current node
+    while current:
     # get tje next node
+      next_node = current.get_next()
     # then set currents next node to previous
+      current.set_next(prev_node)
     #  set previos node to current
+      prev_node = current
     # set current to next node
+      current = next_node
     # set the head to previous node
-    pass
+    self.head = prev_node
