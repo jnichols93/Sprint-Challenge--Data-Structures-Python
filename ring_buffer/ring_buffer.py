@@ -16,16 +16,11 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        # Append needs to add something to the tail if capacity 
-        # isn't full and set itself to the head.  If it is full, 
-        # it needs to get rid of the head and add the new item to the tail,
-        #  then move to the tail adds elements to the buffer. 
-        # if not at cap
         if self.storage.length < self.capacity:
         # add an item to the tail
             self.storage.add_to_tail(item)
         # update the current
-            self.current
+            self.current = self.storage.head
         # if capacity reached
         elif self.storage.length == self.capacity:
         # get rid of the head to free up space
@@ -50,7 +45,7 @@ class RingBuffer:
 # back around to the start.
         # check if DbLL is empty, inform user if it is
         if not self.storage.length:
-            return 'nada in buffer'
+            return 'Nada in buffer'
         # if not empty,
         # add the initial value to list_buffer_contents
         initial = self.current
