@@ -16,8 +16,20 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        #  adds elements to the buffer. 
-        pass
+        # Append needs to add something to the tail if capacity 
+        # isn't full and set itself to the head.  If it is full, 
+        # it needs to get rid of the head and add the new item to the tail,
+        #  then move to the tail adds elements to the buffer. 
+        # if not at cap
+        if self.storage.length < self.capacity:
+        # add an item to the tail
+            self.storage.add_to_tail(item)
+        # update the current
+            self.current
+        # if capacity reached
+        # get rid of the head to free up space
+        # and add item to the tail
+        # if current is still set to drop the head, move it to the tail
 
     def get(self):
         # returns all of the elements in the buffer in a list in their given order. 
