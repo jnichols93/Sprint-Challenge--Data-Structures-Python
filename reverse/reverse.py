@@ -56,7 +56,7 @@ class LinkedList:
       next_node = current.get_next()
     # then set currents next node to previous
       current.set_next(prev_node)
-    #  set previos node to current
+    #  set previous node to current
       prev_node = current
     # set current to next node
       current = next_node
