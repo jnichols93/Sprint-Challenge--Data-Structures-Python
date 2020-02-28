@@ -1,7 +1,6 @@
 import time
-
+# binary search tree will cut time complextiy from 0(n^2) to 0(log n)
 start_time = time.time()
-
 f = open('names_1.txt', 'r')
 names_1 = f.read().split("\n")  # List containing 10000 names
 f.close()
