@@ -42,8 +42,25 @@ class RingBuffer:
         # It should not return any None values in the list even if they are present in the ring buffer.
         # Note:  This is the only [] allowed
         list_buffer_contents = []
-
         # TODO: Your code here
+# This should let you know if the DLL is empty, and if it isn't, 
+# add the initial value to the buffer contents, 
+# then continue down the list, adding each item 
+# from the DLL to the buffer contents until it has circled 
+# back around to the start.
+        # check if DbLL is empty, inform user if it is
+        if not self.storage.length:
+            return 'nada in buffer'
+        # if not empty,
+        # add the initial value to list_buffer_contents
+        # check if there are more nodes to trav
+        # if there is, move to the next one
+        # if None, set next to head
+        # if not back to the start yet,
+        # add the value of the next node to list_buffer_contents
+        # if theres more continue
+        # otherwise set the next node back to the head.
+
 
         return list_buffer_contents
 
