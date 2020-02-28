@@ -53,14 +53,25 @@ class RingBuffer:
             return 'nada in buffer'
         # if not empty,
         # add the initial value to list_buffer_contents
+        initial = self.current
+        list_buffer_contents.append(initial.value)
         # check if there are more nodes to trav
+        if initial.next:
         # if there is, move to the next one
+            next_node = initial.next
         # if None, set next to head
+        else:
+            next_node = self.storage.head
         # if not back to the start yet,
+        while next_node is not initial:
         # add the value of the next node to list_buffer_contents
+            list_buffer_contents.append(next_node.value)
         # if theres more continue
+            if next_node.next:
+                next_node = next_node.next
         # otherwise set the next node back to the head.
-
+            else:
+                next_node = self.storage.head
 
         return list_buffer_contents
 
