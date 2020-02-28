@@ -27,9 +27,15 @@ class RingBuffer:
         # update the current
             self.current
         # if capacity reached
+        elif self.storage.length == self.capacity:
         # get rid of the head to free up space
+            drop_head = self.storage.head
+            self.storage.remove_from_head()
         # and add item to the tail
+            self.storage.add_to_tail(item)
         # if current is still set to drop the head, move it to the tail
+            if drop_head == self.current:
+                self.current =self.storage.tail
 
     def get(self):
         # returns all of the elements in the buffer in a list in their given order. 
